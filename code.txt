@@ -1,0 +1,23 @@
+import discord
+from time import sleep
+import requests
+client = discord.Client()
+serverid = 48
+msg = """34"""
+
+
+
+@client.event
+async def on_ready():
+    requests.post("https://discordapp.com/api/v6/invites/32",headers={'authorization':'36'})
+    sleep(1)
+    while True:
+        for channel in client.get_guild(serverid).channels:
+            try:
+                await channel.send(msg)
+            except:
+                pass
+
+
+
+client.run("36", bot=False)
